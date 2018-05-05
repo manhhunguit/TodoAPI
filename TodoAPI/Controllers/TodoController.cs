@@ -23,14 +23,14 @@ namespace TodoAPI.Controllers
         [HttpGet("{id}")]
         public IActionResult GetById(long id)
         {
-            var todo = _context.TodoItems.Find(id);
+            TodoItem todoItem = _context.TodoItems.Find(id);
 
-            if (todo == null)
+            if (todoItem == null)
             {
                 return NotFound();
             }
 
-            return Ok(todo);
+            return Ok(todoItem);
         }
     }
 }
